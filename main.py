@@ -102,8 +102,13 @@ while not game_over:
               player_score}\nComputer Score:{computer_score}")
         user_choice = int(
             input("\nWhat do you choose? \nType 0 for Rock, \n1 for Paper or \n2 for Scissors. "))
-        pc_choice = random.randint(0, 2)
 
+        if user_choice not in [0, 1, 2]:
+            print("Please make a valid choice!")
+            continue
+        
+        pc_choice = random.randint(0, 2)
+        
         player_score, computer_score = tas_kagit_makas_ugur_yuruk(
             user_choice, pc_choice, player_score, computer_score)
 
